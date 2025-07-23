@@ -3,14 +3,20 @@ export default async function handler(req, res) {
   const ua = req.headers['user-agent'];
   const query = req.query;
   const destination = query.to;
-  const time = new Date().toISOString();
 
-  console.log(`\n[LINK CLICKED]`);
-  console.log(`Time: ${time}`);
-  console.log(`IP: ${ip}`);
-  console.log(`User Agent: ${ua}`);
-  console.log(`Redirecting to: ${destination}`);
-  console.log(`Query Params:`, query);
+  const logPayload = {
+    type: "click",
+    email: query.email || "",
+    campaign: query.campaign || "",
+    ip,
+    ua,
+  };
+
+  await fetch("https://script.google.com/macros/s/AKfycbzwDruR-Eh06iWS-tMnims3n2IyRzQ4G5vwpvCUmCPHy8_3Ksgz15M8r8aS0PPmXm4t/exec", {
+    method: "POST",
+    body: JSON.stringify(logPayload),
+    headers: { "Content-Type": "application/json" },
+  });
 
   if (destination) {
     res.writeHead(302, { Location: destination });
