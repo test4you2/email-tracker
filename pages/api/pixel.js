@@ -4,7 +4,7 @@
  */
 
 // Replace with your Google Apps Script Web App URL
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzT1XCA5uHLxvIntWOGCqiOV_ZdsYcWsI2st5IDaQTIP_yuM1XcCMPKuRYGzbyOn_Pl2A/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxg_h3cUUk_VfC5rAqTLzeCHWgzZO2iRXMyV7qvqR6-DJWTzqq62GMKWmjVAjBhbsq-7Q/exec';
 
 export default async function handler(req, res) {
   try {
