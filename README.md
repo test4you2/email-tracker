@@ -1,1 +1,1 @@
-# mail-tracker
+# email-tracker
